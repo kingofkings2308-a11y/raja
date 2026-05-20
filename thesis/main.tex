@@ -1,0 +1,118 @@
+% =====================================================================
+%  A STUDY OF POST-COVID VIEWERSHIP TRANSFORMATION AND INDUSTRIAL
+%  RECONFIGURATION IN TAMIL FILM INDUSTRY
+%  -------------------------------------------------------------------
+%  PhD thesis  -  master document
+%  Compile with: pdflatex main && bibtex main && pdflatex main && pdflatex main
+%  (or upload the whole `thesis/` folder to Overleaf and click Recompile.)
+% =====================================================================
+\documentclass[12pt,a4paper,oneside]{report}
+
+% --- Geometry & spacing ---------------------------------------------------
+\usepackage[a4paper,left=1.5in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% --- Fonts & encoding -----------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% --- Graphics, tables, figures --------------------------------------------
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf,labelsep=period}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{float}
+
+% --- Maths & symbols ------------------------------------------------------
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+
+% --- Lists, headings, hyperlinks -----------------------------------------
+\usepackage{enumitem}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries\centering}
+  {\MakeUppercase{\chaptertitlename}\ \thechapter}
+  {12pt}{\Large}
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+
+% --- Bibliography ---------------------------------------------------------
+\usepackage[round,authoryear]{natbib}
+\bibliographystyle{plainnat}
+
+% --- Header / page numbers -----------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+% --- Custom commands ------------------------------------------------------
+\newcommand{\thesistitle}{A STUDY OF POST-COVID VIEWERSHIP TRANSFORMATION AND INDUSTRIAL RECONFIGURATION IN TAMIL FILM INDUSTRY}
+\newcommand{\researcher}{[Researcher's Name]}
+\newcommand{\supervisor}{[Supervisor's Name, Designation]}
+\newcommand{\department}{Department of Visual Communication \\ / Media Studies / Management Studies}
+\newcommand{\institution}{[University Name]}
+\newcommand{\submissionyear}{2026}
+
+% =====================================================================
+\begin{document}
+
+% --- Front matter (Roman numerals) --------------------------------------
+\pagenumbering{roman}
+
+\input{preamble/titlepage}
+\clearpage
+\input{preamble/certificate}
+\clearpage
+\input{preamble/declaration}
+\clearpage
+\input{preamble/acknowledgement}
+\clearpage
+\input{preamble/abstract}
+\clearpage
+
+\tableofcontents
+\clearpage
+\listoftables
+\clearpage
+\listoffigures
+\clearpage
+\input{preamble/abbreviations}
+\clearpage
+
+% --- Main matter ---------------------------------------------------------
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{chapters/chapter1_introduction}
+\input{chapters/chapter2_literature}
+\input{chapters/chapter3_methodology}
+\input{chapters/chapter4_industry_overview}
+\input{chapters/chapter5_viewership}
+\input{chapters/chapter6_industry_reconfig}
+\input{chapters/chapter7_conclusion}
+
+% --- References ----------------------------------------------------------
+\cleardoublepage
+\addcontentsline{toc}{chapter}{References}
+\bibliography{references}
+
+% --- Appendices ----------------------------------------------------------
+\appendix
+\input{appendices/appendix_a_viewer_questionnaire}
+\input{appendices/appendix_b_specialist_questionnaire}
+\input{appendices/appendix_c_data_tables}
+
+\end{document}

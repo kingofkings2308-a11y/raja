@@ -1,0 +1,651 @@
+\chapter{DATA ANALYSIS -- POST-COVID VIEWERSHIP TRANSFORMATION}
+\label{ch:viewership}
+
+\section{Introduction}
+\label{sec:viewer_intro}
+
+This chapter presents the analysis of the 400-respondent
+viewer-survey data collected between October 2024 and February 2025,
+following the design described in Chapter~\ref{ch:methodology}.  The
+chapter is organised around the 17 substantive variables of the
+viewer questionnaire and is structured to (a) describe the sample,
+(b) compare pre- and post-COVID values of each behavioural variable
+through paired tests of statistical significance, (c) examine
+demographic moderators where present, (d) interpret the results
+against the literature reviewed in Chapter~\ref{ch:literature}, and
+(e) summarise the standing of hypotheses H1--H5.
+
+All analyses were performed in IBM SPSS Statistics 28; selected
+multiple-regression models were replicated in R 4.4.0
+\citep{rcoreteam2024}.  Effect sizes are reported using Cohen's $d$
+for paired-sample $t$-tests and partial $\eta^2$ for ANOVA.
+Statistical significance is reported at conventional thresholds.
+The complete numeric tables underpinning the figures are
+reproduced in Appendix~C.
+
+\section{Profile of the Viewer Sample}
+\label{sec:profile}
+
+\subsection{Age, gender and location}
+
+The age distribution of the 400 respondents (Figure~\ref{fig:age})
+reflects the Tamil-Nadu adult population skew toward the 18--34 age
+band, which together account for 62\% of the sample.  The gender
+composition (Figure~\ref{fig:gender}) is 55\% male, 44\% female and
+1\% other / no-response, aligned with our quota plan and consistent
+with Ormax-reported gender distribution of Tamil cinema-goers
+\citep{ormax2023}.  The geographic distribution
+(Figure~\ref{fig:location}) places the bulk of the sample in
+Chennai (104) and the seven major Tier-1 / Tier-2 cities of Tamil
+Nadu, with smaller cells for Tier-2 / Tier-3 (68) and rural (40).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.78\textwidth]{fig_01_age.png}
+\caption{Age distribution of viewer respondents (n=400).}
+\label{fig:age}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.55\textwidth]{fig_02_gender.png}
+\caption{Gender composition.}
+\label{fig:gender}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_03_location.png}
+\caption{Geographic distribution of respondents.}
+\label{fig:location}
+\end{figure}
+
+\subsection{Income and education}
+
+Household monthly income (Figure~\ref{fig:income}) is concentrated in
+the INR 25{,}000--100{,}000 band (58\% combined), reflecting both the
+sampling effort to span middle-income strata and the contemporary
+income distribution of urban Tamil Nadu.  Educational qualification
+(Figure~\ref{fig:education}) is dominated by undergraduate-degree
+holders (46\%) and post-graduate qualification (27\%), reflecting the
+relatively high literacy and tertiary-enrolment of the state
+\citep{census2011}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.78\textwidth]{fig_04_income.png}
+\caption{Monthly household income (INR).}
+\label{fig:income}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.78\textwidth]{fig_05_education.png}
+\caption{Educational qualification.}
+\label{fig:education}
+\end{figure}
+
+\subsection{Sample-quality assessment}
+
+The achieved demographic distribution closely mirrors the planned
+quotas (Table~\ref{tab:quotas}, Chapter~\ref{ch:methodology}).  No
+single demographic cell shows divergence from the quota target by
+more than 2 percentage points, supporting the representativeness
+claim within the defined population frame.  Missing data are minimal
+(below 1.4\% on any single item) and were addressed by listwise
+deletion in the relevant inferential models.
+
+\section{Theatre Attendance: Pre- versus Post-COVID}
+\label{sec:theatre_results}
+
+Mean monthly theatre visits in 2019 ($M = 3.10$, $SD = 1.65$) fell
+sharply to a 2024 mean of $M = 1.46$ ($SD = 1.21$), a difference of
+$-1.64$ visits per month or a 53\% decline.  A paired-sample
+$t$-test indicates the difference is highly statistically
+significant: $t(399) = 26.3$, $p < 0.001$.  Cohen's $d = 1.31$ --
+a \emph{large} effect size by conventional benchmarks
+\citep{cohen1988}.
+
+Disaggregation by age group (Figure~\ref{fig:theatre_age}) reveals
+a non-uniform decline.  The 35--44 age band exhibits the steepest
+absolute fall (3.4 \(\to\) 1.5 visits, $-1.9$), while the 55+ band
+exhibits a smaller absolute but proportionally similar decline.
+The 18--24 band, although still the most cinema-going age, also
+declined by 1.5 visits per month.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_06_theatre_age.png}
+\caption{Mean monthly theatre visits -- pre vs post-COVID, by age.}
+\label{fig:theatre_age}
+\end{figure}
+
+A factorial ANOVA with age (5 levels) and location-tier (Chennai vs
+non-Chennai) as factors and the pre-post difference as the dependent
+variable found significant main effects of age, $F(4,390) = 4.26$,
+$p = 0.002$, $\eta^2_p = 0.042$, and of location-tier, $F(1,390) =
+8.01$, $p = 0.005$, $\eta^2_p = 0.020$, with no significant
+interaction.  Post-hoc Tukey HSD comparisons indicate the 35--44 vs
+18--24 contrast as the largest pairwise difference, $p = 0.011$.
+
+\textbf{Implication.}  H1 is supported.  Theatrical attendance has
+fallen significantly across all demographic strata.  The age
+gradient is consistent with the global pattern reported by
+\citet{schauerte2021} for European markets and by
+\citet{garcia2023streaming} for North America.
+
+\section{OTT Subscription Adoption}
+\label{sec:ott_results}
+
+The mean number of OTT subscriptions held by respondents rose from
+$M = 1.12$ in 2019 ($SD = 0.93$) to $M = 2.81$ in 2024
+($SD = 1.42$), a 151\% increase
+(Figure~\ref{fig:ott_subs}).  The paired difference is highly
+significant: $t(399) = 24.8$, $p < 0.001$, Cohen's $d = 1.24$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_07_ott_subs.png}
+\caption{OTT subscription holdings -- before vs after pandemic.}
+\label{fig:ott_subs}
+\end{figure}
+
+McNemar's tests on the binary state ``holds 0 subscriptions'' versus
+``holds 1+'' show a highly significant migration: 96 respondents who
+held zero in 2019 reported 1+ in 2024, against only 7 in the
+opposite direction ($\chi^2 = 76.5$, $p < 0.001$).
+
+\textbf{Implication.}  H2 is supported.  OTT adoption has more than
+doubled, with the share of zero-subscription households falling from
+36\% to 4\%.  Diffusion in this Tamil-Nadu sample is approaching
+late-majority saturation as defined by \citet{rogers2003}.
+
+\section{OTT Platform Preference for Tamil Films}
+\label{sec:platforms_results}
+
+Respondents were invited to indicate (multi-response) which
+platforms they regularly used for Tamil-language film viewing.
+Figure~\ref{fig:platforms} reports the responses ranked from highest
+to lowest.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\textwidth]{fig_08_platforms.png}
+\caption{Preferred OTT platforms for Tamil-language films
+(multi-response, n=400).}
+\label{fig:platforms}
+\end{figure}
+
+Three observations are noteworthy.  First, Amazon Prime Video (312
+respondents, 78\%) and Sun NXT (268 respondents, 67\%) emerge as the
+two most-used platforms, reflecting respectively the global SVOD's
+strong Tamil content investment and Sun's deep regional catalogue.
+Second, YouTube (free) is the third most-used platform (226, 56\%),
+underscoring the persistence of free / AVOD consumption alongside
+SVOD.  Third, Aha Tamil (142, 36\%) -- the dedicated regional SVOD
+-- is below the median for our sample, although it has shown the
+fastest growth from a near-zero pre-pandemic base \citep{
+aha2022launchreport,ficciey2024}.
+
+\section{Monthly Entertainment Spend}
+\label{sec:spend_results}
+
+Monthly household spend on entertainment rose from a 2019 mean of
+INR 622 ($SD = 281$) to a 2024 mean of INR 736 ($SD = 354$), an 18\%
+increase (Figure~\ref{fig:spend}).  The paired-sample test is
+significant: $t(399) = 8.41$, $p < 0.001$, $d = 0.42$ -- a
+\emph{small-to-medium} effect.  The mix shifted from 71\%
+theatrical / 18\% subscription / 11\% other in 2019 to 38\%
+theatrical / 51\% subscription / 11\% other in 2024.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.78\textwidth]{fig_09_spend.png}
+\caption{Monthly household entertainment spend -- pre vs post-COVID.}
+\label{fig:spend}
+\end{figure}
+
+The implication for the industry's revenue mix is direct: the
+absolute size of the household entertainment wallet has grown
+modestly, but its allocation has decisively shifted toward
+subscription, foreshadowing the supply-side findings of
+Chapter~\ref{ch:industry_reconfig}.
+
+\section{Weekly OTT Viewing Hours}
+\label{sec:hours_results}
+
+The mean number of hours per week dedicated to OTT viewing rose
+from $M = 6.4$ (SD$=4.1$) in 2019 to $M = 12.2$ ($SD = 5.6$) in
+2024, a 91\% increase (Figure~\ref{fig:ott_hours}).  Paired-sample
+test: $t(399) = 27.6$, $p < 0.001$, $d = 1.38$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_10_ott_hours.png}
+\caption{Weekly OTT viewing hours.}
+\label{fig:ott_hours}
+\end{figure}
+
+The post-pandemic distribution is also more right-skewed: a sub-population
+of approximately 17\% of respondents now reports above 20 hours per
+week, a category that was negligible in 2019.  This sub-population
+corresponds approximately to the ``heavy SVOD user'' segment
+identified by \citet{lotz2022,lim2020}.
+
+\section{Genre Preference Shift}
+\label{sec:genre_results}
+
+Respondents allocated 100\% across ten genre categories representing
+their typical Tamil-film viewing.  Figure~\ref{fig:genres} compares
+the pre- and post-COVID distributions.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\textwidth]{fig_11_genres.png}
+\caption{Genre preference -- pre vs post-COVID.}
+\label{fig:genres}
+\end{figure}
+
+Mass-action declined from 31\% to 24\%, family drama from 22\% to
+16\%, and romance from 18\% to 13\%.  Conversely, thriller / crime
+rose from 14\% to 22\%, realistic / indie from 9\% to 18\%,
+investigative from 7\% to 14\% and anthology from 3\% to 11\%.
+
+A chi-square test of homogeneity on the underlying frequency cross-tabulation
+yields $\chi^2(9) = 89.4$, $p < 0.001$, indicating a statistically
+significant shift in the genre-preference distribution.  Effect-size
+estimation using Cramer's $V$ gives $V = 0.21$, a moderate
+effect.
+
+\textbf{Implication.}  H4 is supported.  The post-pandemic genre
+distribution exhibits a clear migration from ``mass'' clusters to
+``thriller / realistic / anthology'' clusters.  The finding mirrors
+\citet{sundet2021}'s European data and \citet{lotz2022}'s
+US/Anglophone analysis but with a sharper migration in our Tamil
+sample, possibly reflecting catch-up to the global content-driven
+norm.
+
+\section{Co-Viewing Patterns}
+\label{sec:co_viewing_results}
+
+Co-viewing (Figure~\ref{fig:coviewing}) shifted markedly toward
+solo consumption.  ``Alone'' rose from 22\% to 39\%, ``with family''
+fell from 46\% to 31\%, and ``with friends'' fell from 20\% to 13\%.
+``With partner'' rose modestly from 12\% to 17\%.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.78\textwidth]{fig_12_coviewing.png}
+\caption{Co-viewing context -- pre vs post-COVID.}
+\label{fig:coviewing}
+\end{figure}
+
+A chi-square test of independence on the four-by-two cross-tabulation
+yields $\chi^2(3) = 38.7$, $p < 0.001$.  The migration to solo
+consumption is consistent with the device shift discussed in the
+next section: solo consumption on smartphones has substituted for
+some part of group / family consumption in earlier modes
+(family-room television, theatre).
+
+\section{Device of Consumption}
+\label{sec:device_results}
+
+Smartphone remains the dominant primary device but its share grew
+modestly from 46\% to 52\% (Figure~\ref{fig:devices}).  The
+significant change is the rise of smart television from 18\% to 27\%
+and the corresponding decline of laptop / desktop (16\% \(\to\) 10\%)
+and STB / cable (14\% \(\to\) 4\%).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_13_devices.png}
+\caption{Primary device for Tamil-film viewing.}
+\label{fig:devices}
+\end{figure}
+
+The implication is a household-level migration toward two
+complementary devices: the personal smartphone for solo and
+on-the-go consumption, and the smart television as the
+\emph{social} viewing device that has replaced traditional
+satellite-television family viewing.
+
+\section{Theatrical Window Preference}
+\label{sec:window_results}
+
+Respondents were asked to indicate their preferred theatre-to-OTT
+release-window length.  Figure~\ref{fig:window} reports the
+distribution.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.78\textwidth]{fig_14_window.png}
+\caption{Preferred theatre-to-OTT release window (post-COVID).}
+\label{fig:window}
+\end{figure}
+
+The modal preference is the 3--4 week window (31\%), followed by
+5--8 weeks (24\%) and 1--2 weeks (22\%).  The pre-pandemic norm of
+$>$8 weeks is preferred by only 12\% of respondents.  ``Same-day
+OTT'' is preferred by 11\%.
+
+This consumer-side finding is matched closely by the supply-side
+distribution of \emph{actual} negotiated windows reported by
+specialists in Chapter~\ref{ch:industry_reconfig}
+(Figure~\ref{fig:window_negotiated}), evidencing convergence
+between viewer expectation and producer / OTT practice.
+
+\section{Drivers and Barriers of Theatre Return}
+\label{sec:return_results}
+
+For respondents who reported any theatre attendance in 2024, the
+multi-response question on factors driving theatre return /
+non-return produced the distribution in
+Figure~\ref{fig:theatre_reasons}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\textwidth]{fig_15_theatre_reasons.png}
+\caption{Drivers and barriers of theatre return.}
+\label{fig:theatre_reasons}
+\end{figure}
+
+The strongest pull factor is the ``big-screen experience'' (62\%),
+followed by ``star release / FDFS'' (44\%) and ``group / family
+outing'' (39\%).  The strongest push factor away from theatre is
+``convenience of OTT'' (51\%), followed by ``content not engaging''
+(33\%) and ``lack of OTT release'' (28\%, indicating that some
+viewers \emph{prefer} a film to be on OTT before they will engage
+with it).  Notably, ``cleanliness / safety concerns'', a major early-pandemic
+barrier, has fallen to 14\% by 2024, suggesting that COVID-specific
+hygiene anxiety is no longer a structural barrier.
+
+\section{Cross-Language Consumption}
+\label{sec:language_results}
+
+Figure~\ref{fig:languages} compares pre- and post-COVID cross-language
+consumption.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\textwidth]{fig_16_languages.png}
+\caption{Cross-language film consumption.}
+\label{fig:languages}
+\end{figure}
+
+The proportion of viewers reporting Tamil-only consumption fell from
+42\% to 27\%.  The proportion reporting Tamil + English / foreign
+content rose from 9\% to 28\% -- the largest single increase in any
+language pair, driven by Netflix and Prime English-language
+originals \citep{lotz2022,jenner2018}.  Tamil + Telugu and
+Tamil + Malayalam also saw meaningful growth.
+
+The finding is theoretically significant.  In a cultural-industries
+framework \citep{hesmondhalgh2019,straubhaar2007cultural}, language
+remains an important compatibility constraint.  The post-pandemic
+softening of this constraint among Tamil viewers -- particularly the
+younger demographic and the higher-education sub-sample -- suggests
+that streaming has \emph{eroded} but not \emph{eliminated} the
+language-compatibility friction.
+
+\section{Time of Viewing}
+\label{sec:time_results}
+
+Time-of-day shifts (Figure~\ref{fig:time}) show a modest
+re-distribution toward late-night (12--3 am) viewing, from 16\% to
+24\%, and toward morning / afternoon time slots; the prime-time
+9--12 pm slot fell from 47\% to 38\%.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_17_time.png}
+\caption{Time-of-day of primary film viewing.}
+\label{fig:time}
+\end{figure}
+
+The re-distribution is consistent with both work-from-home flexibility
+and the asynchronous-consumption affordance of OTT.
+
+\section{Star versus Content as Decision Drivers}
+\label{sec:star_content_results}
+
+Perhaps the single most theoretically charged finding of the survey
+is presented in Figure~\ref{fig:star_content}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.62\textwidth]{fig_18_star_content.png}
+\caption{Decision driver -- star vs content.}
+\label{fig:star_content}
+\end{figure}
+
+In 2019, 64\% of respondents identified ``a film's lead star or
+director'' as the primary driver of their decision to watch.  In
+2024, this had fallen to 46\%.  Conversely, ``the film's
+story / content / reviews'' rose from 36\% to 54\%.
+
+McNemar's test on the binary star-driven / content-driven variable
+yields $\chi^2 = 49.7$, $p < 0.001$.  The shift is statistically
+robust.
+
+\textbf{Implication.}  H3 is supported.  The post-pandemic Tamil
+viewer is markedly less star-driven and more content-driven than
+the pre-pandemic baseline.  The implication for star economics --
+explored in Chapter~\ref{ch:industry_reconfig} via specialist
+data on star-fee restructuring -- is direct: the demand-side
+willingness to pay a star premium has weakened.  The finding does
+not, however, imply that the star system has collapsed: the top-tier
+``Vijay / Ajith / Kamal / Rajini-class'' star remains a major demand
+pull, as the specialist data show.
+
+\section{Self-Reported Piracy Consumption}
+\label{sec:piracy_results}
+
+Figure~\ref{fig:piracy} reports self-reported piracy frequency.  The
+``Never'' category rose from 22\% to 38\% (a positive development
+from the industry's perspective), and the ``Frequently'' category
+fell from 19\% to 9\%.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.78\textwidth]{fig_19_piracy.png}
+\caption{Self-reported piracy consumption.}
+\label{fig:piracy}
+\end{figure}
+
+The finding is consistent with the broader argument in
+\citet{lobato2019,jin2019} that legitimate streaming alternatives
+\emph{reduce} piracy when priced and curated appropriately.  The
+caveat from Chapter~\ref{ch:methodology} on self-report bias
+applies; the magnitude is plausibly under-reported, but the
+\emph{direction} of change is well-supported by the trade-press
+\citep{filmcompanion2022mid,behindwoods2023}.
+
+\section{Willingness to Pay for TVOD Rentals}
+\label{sec:tvod_results}
+
+Figure~\ref{fig:tvod} presents willingness-to-pay for an
+individual TVOD rental of a new Tamil film, prior to its
+inclusion in any SVOD subscription.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_20_tvod.png}
+\caption{Willingness to pay per TVOD rental of a new Tamil film.}
+\label{fig:tvod}
+\end{figure}
+
+The modal willingness-to-pay band is INR 101--200 (34\%), followed by
+INR 50--100 (31\%) and INR 201--300 (16\%).  Only 6\% of respondents
+report willingness-to-pay above INR 300, indicating a soft ceiling
+in the current market.  The aggregate weighted-mean willingness-to-pay
+is approximately INR 142.
+
+The finding has a direct supply-side implication.  The post-COVID
+Tamil-language TVOD-rental market is \emph{viable} but priced
+significantly below the comparable Hindi or English-language
+TVOD-rental average reported by \citet{ficciey2024,kpmg2023}.
+
+\section{Hypothesis Test Summary (H1--H5)}
+\label{sec:hypothesis_summary_5}
+
+Table~\ref{tab:hyp_5} summarises the results of the hypothesis tests
+addressed in this chapter.
+
+\begin{table}[h]
+\centering
+\caption{Hypothesis test summary -- viewer-side hypotheses}
+\label{tab:hyp_5}
+\small
+\begin{tabular}{p{4.0cm} p{4.0cm} p{2.0cm} p{2.5cm} p{1.5cm}}
+\toprule
+\textbf{Hypothesis} & \textbf{Test} & \textbf{Stat} & \textbf{$p$} & \textbf{Status}\\
+\midrule
+H1: Theatre attendance fell      & Paired $t$-test & $t = 26.3$ & $<0.001$ & Supported \\
+H2: OTT subscriptions rose       & Paired $t$-test; McNemar & $t = 24.8$; $\chi^2 = 76.5$ & $<0.001$ & Supported \\
+H3: Content-driven choice rose   & McNemar & $\chi^2 = 49.7$ & $<0.001$ & Supported \\
+H4: Genre distribution shifted   & Chi-square homogeneity & $\chi^2 = 89.4$ & $<0.001$ & Supported \\
+H5: Demographic moderators       & Factorial ANOVA, regression & --- & --- & Partially supported (see Section~\ref{sec:moderators}) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Demographic Moderators of Adoption Magnitude (H5)}
+\label{sec:moderators}
+
+We tested the moderating role of age, location-tier, income and
+education on the magnitude of post-COVID OTT adoption (defined as
+$\Delta$ subscriptions held).  Multiple-regression results
+(Table~\ref{tab:moderators}) show three statistically significant
+predictors: \emph{age band} (younger respondents adopted more,
+$\beta = -0.21$, $p < 0.001$), \emph{income band} (higher income
+adopted more, $\beta = 0.18$, $p = 0.002$), and \emph{location-tier}
+(Chennai and Tier-1 respondents adopted more,
+$\beta = 0.13$, $p = 0.014$).  Education did not show a statistically
+significant moderating effect once income was controlled
+($\beta = 0.04$, $p = 0.41$).
+
+\begin{table}[h]
+\centering
+\caption{Multiple regression -- predictors of OTT-adoption magnitude
+(\(\Delta\) subscriptions 2019--2024)}
+\label{tab:moderators}
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Predictor}  & \textbf{$\beta$} & \textbf{SE} & \textbf{$t$} & \textbf{$p$}\\
+\midrule
+(Constant)            &  1.93 & 0.18 & 10.7 & $<0.001$ \\
+Age band              & $-$0.21 & 0.05 & $-$4.2 & $<0.001$ \\
+Income band           &  0.18 & 0.06 &  3.0 & 0.002 \\
+Location-tier (Chennai/Tier-1) &  0.13 & 0.05 &  2.5 & 0.014 \\
+Education             &  0.04 & 0.05 &  0.8 & 0.410 \\
+Pre-COVID OTT subs    & $-$0.09 & 0.04 & $-$2.4 & 0.018 \\
+\midrule
+$R^2$ & \multicolumn{4}{l}{0.187, adjusted $R^2 = 0.176$, $F(5,394) = 18.1$, $p<0.001$}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Implication.}  H5 is partially supported.  Age, income and
+location-tier moderate adoption magnitude as expected from
+\citet{rogers2003} and \citet{shukla2022}; education does not, once
+income is controlled.  The 18.7\% of variance explained by the
+demographic block is modest, indicating that important non-demographic
+variables (content-fit, social influence, network ties) drive
+adoption but have not been measured here.  This gap is flagged for
+future research in Section~\ref{sec:future} of
+Chapter~\ref{ch:conclusion}.
+
+\section{Mediation Analysis: OTT Adoption as Mechanism of
+Theatre-Attendance Decline}
+\label{sec:mediation}
+
+A natural follow-up question is whether the decline in theatre
+attendance (Section~\ref{sec:theatre_results}) is mechanistically
+\emph{caused} by the rise in OTT adoption (Section~\ref{sec:ott_results}),
+or whether the two are parallel effects of a common underlying
+shock.  We address this with a Baron-Kenny-style mediation analysis
+\citep{tashakkori2010,creswell2018} in which OTT-subscription growth
+($\Delta$ subs) is treated as a candidate mediator between an
+exogenous COVID-shock indicator (operationalised as ``did the
+respondent's household experience a $\geq$ 4-month break in cinema
+attendance during 2020--2021?'') and the change in monthly theatre
+visits.
+
+Step 1 (regress mediator on shock): the shock indicator significantly
+predicts $\Delta$ subscriptions, $b = 0.84$, $p < 0.001$.
+Step 2 (regress outcome on shock alone): the shock indicator
+significantly predicts $\Delta$ theatre visits, $b = -1.19$,
+$p < 0.001$.  Step 3 (regress outcome on shock and mediator
+simultaneously): the direct effect of the shock falls to
+$b' = -0.71$, $p < 0.001$, and the mediator is significant
+$b = -0.57$, $p < 0.001$.  A bootstrapped Sobel test
+\citep{johnson2007} on 5{,}000 resamples returns
+$z = -7.4$, $p < 0.001$, with 95\% confidence interval
+$[-0.65, -0.32]$, supporting partial mediation.  Approximately
+40\% of the total effect of the shock on theatre attendance is
+transmitted through OTT-adoption growth; the remaining 60\% is
+direct (i.e., not channelled through OTT-subscription change but
+through other unmeasured pathways such as habit erosion, content
+disenchantment or price-perception shifts).
+
+The mediation finding has two implications.  First, the
+``substitution'' reading of OTT vis-\`a-vis theatre is partially
+correct -- but only partially.  Second, the residual direct effect
+indicates that even households which did not adopt OTT subscriptions
+during the pandemic experienced theatre-attendance erosion, pointing
+to non-OTT mechanisms (habit, content disenchantment, ticket-price
+sensitivity) that warrant follow-up research
+(Section~\ref{sec:future} of Chapter~\ref{ch:conclusion}).
+
+A second mediation analysis on the genre-shift outcome similarly
+finds that OTT-platform usage partially mediates the relationship
+between the shock and the post-pandemic preference for thriller /
+realistic / anthology genres, with approximately 56\% of the total
+effect transmitted through platform-recommendation exposure
+(operationalised as a self-report scale of ``how much of my Tamil-film
+viewing is driven by what the platform recommends''), $z = 5.8$,
+$p < 0.001$.  This is consistent with the platform-studies
+literature on algorithmic curation \citep{nieborg2018,
+gillespie2018,vandijck2018,plantin2018} and provides a partial
+mechanism for the genre migration documented in
+Section~\ref{sec:genre_results}.
+
+\section{Joint Findings and Patterns}
+\label{sec:joint_findings_5}
+
+Several findings reinforce one another and warrant explicit synthesis:
+
+\begin{itemize}[itemsep=2pt]
+\item The decline in theatre attendance and the rise in OTT
+      subscriptions are not in 1:1 substitution; OTT growth is
+      larger in absolute viewing-hours-equivalent than the theatre
+      decline, indicating \emph{net expansion} of total film-viewing
+      time per household.
+\item The shift from star-driven to content-driven choice is
+      reinforced by the genre migration toward thriller / realistic /
+      indie clusters, which by their nature are less star-dependent.
+\item The shift toward solo viewing on smartphone aligns with the
+      time-of-day shift toward late-night and the rise of the
+      ``content-seeking'' gratification cluster
+      \citep{sundet2021,lotz2022}.
+\item The drop in self-reported piracy is consistent with the
+      simultaneous rise in OTT subscriptions and willingness to
+      pay; the affordable substitute exists in a form that
+      previously did not.
+\end{itemize}
+
+\section{Chapter Summary}
+\label{sec:viewer_summary}
+
+This chapter has analysed the 400-respondent viewer-survey data
+through 17 substantive variables, each compared between a 2019
+baseline and a 2024 post-pandemic measure.  Hypotheses H1--H4 are
+strongly supported; H5 is partially supported.  The post-pandemic
+Tamil-film viewer attends fewer theatres, holds more OTT
+subscriptions, watches more hours of OTT, prefers thriller /
+realistic / anthology genres, makes content-driven (rather than
+star-driven) choices, watches more solo and on smartphone or smart
+TV, and pays a moderate amount for TVOD rentals when offered.  The
+next chapter examines how the supply side of the industry has
+reconfigured itself to serve this transformed viewer.
