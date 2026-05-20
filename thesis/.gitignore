@@ -1,0 +1,17 @@
+# LaTeX intermediate files (regenerated on each compile)
+main.aux
+main.log
+main.bbl
+main.blg
+main.toc
+main.lof
+main.lot
+main.out
+main.synctex.gz
+main.fdb_latexmk
+main.fls
+main.run.xml
+main.bcf
+
+# Tectonic cache
+.tectonic/
